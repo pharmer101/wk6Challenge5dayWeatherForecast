@@ -1,0 +1,46 @@
+#today{
+background-color: bisque;
+border: 1px solid black;
+
+}
+
+aside{
+    display: inline-block;
+   
+   // max-width: fit-content;
+}
+
+h2{
+    display: inline-block;
+}
+
+#foreDiv{
+    color: white;
+    background-color:rgb(82, 82, 111);
+    margin: 10px;
+    max-width: 250px;
+    display: inline-block;
+}
+#forecast{
+    display: inline;
+    background-color: red;
+   
+}
+
+#search-button{
+
+    background-color: blue;
+    color: white;  
+    
+}
+
+#cityButton{
+    max-width: 150px;
+    display: inline-block;
+    margin: 5px;
+}
+
+#history{
+  
+}
+
