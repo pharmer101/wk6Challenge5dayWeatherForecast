@@ -12,9 +12,9 @@ var buttonCity
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   city = textInput.value;
-  console.log(event);
-  console.log(city)
-  var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=5&appid=30227bf7877b7afa67565b4290c5bd6d" 
+  // console.log(event);
+  // console.log(city)
+  var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=5&appid=30227bf7877b7afa67565b4290c5bd6d" 
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -30,7 +30,7 @@ form.addEventListener('submit', (event) => {
     //console.log("New function citiy is " + city)
     //console.log("New function citiy lat " + lat)
     //console.log("New function citiy lon " + lon)
-    fqueryURL = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=30227bf7877b7afa67565b4290c5bd6d"
+    fqueryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=30227bf7877b7afa67565b4290c5bd6d"
     //console.log("The full url for the forecast is " + fqueryURL);
 
     $.ajax({
@@ -51,7 +51,7 @@ form.addEventListener('submit', (event) => {
     var nameDate =  document.createElement("h6");
     var fulldate = weatherData.list[0].dt_txt
     var dateSlice = fulldate.slice(0,10)
-    console.log("Date slice is : " + dateSlice)
+    // console.log("Date slice is : " + dateSlice)
     nameDate.innerHTML = `${city}: ${dateSlice}`
     //nameDate.innerHTML = `${city}:( ${weatherData.list[2].dt_txt})`
     var icon = weatherData.list[0].weather.icon
@@ -124,7 +124,7 @@ form.addEventListener('submit', (event) => {
         buttonArea.appendChild(newButton);
 
         buttonArea.addEventListener("click",function(event){
-            console.log(event.target);
+            // console.log(event.target);
             var buttoninfo = event.target.innerText
             console.log("chosen button is " + buttoninfo)
             city = buttoninfo
@@ -141,35 +141,35 @@ form.addEventListener('submit', (event) => {
 
 
 function citybuttonSearch(){
-    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=5&appid=30227bf7877b7afa67565b4290c5bd6d" 
+    var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=5&appid=30227bf7877b7afa67565b4290c5bd6d" 
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response)
+      // console.log(response)
       lat = response[0].lat;
       lon = response[0].lon
-      console.log(city + "latitude is " + lat);
-      console.log(city + "longitude is " + lon)
+      // console.log(city + "latitude is " + lat);
+      // console.log(city + "longitude is " + lon)
     })
     .then(function(){
   
-      console.log("New function citiy is " + city)
-      console.log("New function citiy lat " + lat)
-      console.log("New function citiy lon " + lon)
-      fqueryURL = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=30227bf7877b7afa67565b4290c5bd6d"
-      console.log("The full url for the forecast is " + fqueryURL);
+      // console.log("New function citiy is " + city)
+      // console.log("New function citiy lat " + lat)
+      // console.log("New function citiy lon " + lon)
+      fqueryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=30227bf7877b7afa67565b4290c5bd6d"
+      // console.log("The full url for the forecast is " + fqueryURL);
   
       $.ajax({
           url: fqueryURL,
           method: "GET"
         }).then(function(response) {
         // console.log("this is the weather forcast API Call");  
-        console.log(response);
-        console.log(response.city)
+        // console.log(response);
+        // console.log(response.city)
         var weatherData = response
-        console.log("This is the variable weatherData");
-        console.log(weatherData)
+        // console.log("This is the variable weatherData");
+        // console.log(weatherData)
        
       
       //-----------------Today Forecast-------------------------------
